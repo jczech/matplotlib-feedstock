@@ -11,26 +11,18 @@ source:
   fn: matplotlib-{{ version }}.tar.gz
   url: https://github.com/matplotlib/matplotlib/archive/v{{ version }}.tar.gz
   sha256: c72276afc11f0b77cee736a783861039c0284d2e4739de8ca09d2dd1407745aa
-  patches:
-    # Find Tcl and libpng on Windows.
-    - setupext.patch  # [win]
-    # A patch to make Qt4Agg the default backend.
-    - cfg_qt4agg.patch  # [linux]
-    # Patches the matplotlibrc template to default to Qt4.
-    - rctmp_pyside.patch  # [not osx]
 
 build:
-    number: 0
+    number: 2
 
 requirements:
   build:
-    - toolchain
     - python
     - setuptools
     - pkg-config  # [not win]
     - numpy x.x
     - python-dateutil
-    - freetype 2.6.*
+    - freetype
     - msinttypes  # [win]
     - cycler
     - nose
@@ -38,21 +30,19 @@ requirements:
     - pytz
 #    - py2cairo  # [linux and py2k]
     - tornado
-    - libpng >=1.6.23,<1.7
+    - libpng
     - zlib 1.2.*  # [win]
-    - pyqt  # [not osx]
     - tk 8.5.*  # [linux]
   run:
     - python
     - numpy x.x
     - cycler
     - python-dateutil
-    - freetype 2.6.*
+    - freetype
     - pytz
     - pyparsing
 #    - py2cairo  # [linux and py2k]
-    - libpng >=1.6.23,<1.7
-    - pyqt  # [not osx]
+    - libpng
     - tk 8.5.*  # [linux]
     - functools32  # [py2k]
     - setuptools
