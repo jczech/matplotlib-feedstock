@@ -26,6 +26,7 @@ requirements:
     - pkg-config  # [not win]
     - numpy x.x
     - python-dateutil
+    - freetype # [linux]
     - freetype 2.6.*  # [win]
     - msinttypes  # [win]
     - cycler
@@ -34,6 +35,7 @@ requirements:
     - pytz
 #    - py2cairo  # [linux and py2k]
     - tornado
+    - libpng  # [linux]
     - libpng >=1.6.23,<1.7  # [win]
     - zlib 1.2.*  # [win]
     - tk 8.5.*  # [linux]
@@ -42,10 +44,12 @@ requirements:
     - numpy x.x
     - cycler
     - python-dateutil
+    - freetype # [linux]
     - freetype 2.6.*  # [win]
     - pytz
     - pyparsing
 #    - py2cairo  # [linux and py2k]
+    - libpng  # [linux]
     - libpng >=1.6.23,<1.7  # [win]
     - tk 8.5.*  # [linux]
     - functools32  # [py2k]
